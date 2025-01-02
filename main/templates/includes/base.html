@@ -1,0 +1,184 @@
+{% load static %}
+
+<style>
+
+.form-control-dark:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle:not(:focus) {
+  outline: 0;
+}
+
+  .form-control-dark {
+    border-color: var(--bs-gray);
+  }
+
+  svg {
+    display: none;
+  }
+
+  .navbar-brand h1 {
+    font-size: 4rem; /* Увеличиваем размер шрифта */
+    position: relative;
+    top: 55px; /* Сдвигаем заголовок вниз */
+  }
+
+header {
+    background-color: #f4f1e1; /* Светлый серый фон, как у футера */
+    border-bottom: 1px solid #e7e7e7; /* Легкая разделительная линия, как у футера */
+}
+
+footer {
+    background-color: #f4f1e1; /* Светлый фон */
+    border-top: 1px solid #e7e7e7; /* Лёгкая разделительная линия */
+    width: 100%; /* Чтобы футер заполнял всю ширину экрана */
+    margin: 0; /* Убираем возможные отступы */
+}
+
+
+.back-to-top {
+    font-size: 1.1rem; /* Чуть увеличим шрифт */
+    font-weight: bold; /* Делаем текст жирным */
+    text-transform: uppercase; /* Делаем текст заглавными буквами */
+    color: #007bff; /* Синий цвет для текста */
+    transition: color 0.3s, transform 0.3s; /* Плавный переход для цвета и эффекта при наведении */
+    position: relative;
+    top: -25px; /* Немного поднимем текст еще выше */
+    left: -250px; /* Немного сдвигаем текст влево */
+    display: inline-block;
+}
+
+.back-to-top:hover {
+    color: #0056b3; /* Цвет при наведении */
+    transform: translateY(-3px); /* Легкое поднимание текста при наведении */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+/* Стили для названия сайта */
+.navbar-brand h1 {
+  font-family: 'Dancing Script', cursive; /* Используем шрифт с рукописным эффектом */
+  font-size: 4rem; /* Увеличиваем размер шрифта */
+  font-weight: 600; /* Сделаем шрифт менее жирным для изысканности */
+  background: linear-gradient(45deg, #ff6ec7, #ffcd02); /* Градиент для текста */
+  -webkit-background-clip: text; /* Клиппинг фона по тексту */
+  color: transparent; /* Делаем цвет текста прозрачным */
+  position: relative;
+  top: 55px; /* Сдвигаем заголовок вниз */
+  left: -500px; /* Сдвигаем заголовок влево */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Более глубокая тень */
+  letter-spacing: 3px; /* Уменьшаем межбуквенное расстояние */
+  text-transform: uppercase; /* Делаем все буквы заглавными */
+  transition: all 0.3s ease; /* Плавное изменение */
+}
+
+/* Эффект при наведении */
+.navbar-brand h1:hover {
+  transform: scale(1.1); /* При наведении увеличиваем размер текста */
+    text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7); /* Увеличиваем тень при наведении */
+}
+
+
+
+/* Дополнительные стили для плавных переходов */
+.navbar-brand h1 {
+  text-align: center;
+}
+
+
+</style>
+
+
+<svg>
+  <symbol id="home" viewBox="0 0 16 16">
+    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+  </symbol>
+  <symbol id="table" viewBox="0 0 16 16">
+    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/>
+  </symbol>
+  <symbol id="book" viewBox="0 0 16 16">
+    <path d="M1 2.828c.885-.37 2.154-.76 3.85-1.011C6.5 1.45 8.202 1.4 9 1.5V13a1 1 0 0 1-1 1c-1.264-.27-2.636-.83-4-.83s-2.736.56-4 .83a1 1 0 0 1-1-1V2.828z" fill="#6c757d"/>
+    <path d="M8 2.5a.5.5 0 0 1 .5.5V13a1 1 0 0 0 1 1c1.264-.27 2.636-.83 4-.83s2.736.56 4 .83a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1c-1.57.37-3.07.73-4 .97-.926-.24-2.424-.6-4-.97a1 1 0 0 0-1 1v-.5z" fill="#adb5bd"/>
+    <path d="M3.5 3.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1zm0 2h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1zm0 2h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1z" fill="#495057"/>
+  </symbol>
+  <symbol id="habit" viewBox="0 0 16 16">
+    <path d="M2 2.5A.5.5 0 0 1 2.5 2h11a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11zM3 3v10h10V3H3zm2.854 3.646a.5.5 0 0 1 .708 0L8 7.793l1.438-1.439a.5.5 0 1 1 .707.708L8.707 8.5l2.146 2.146a.5.5 0 1 1-.708.708L8 9.207l-1.439 1.439a.5.5 0 1 1-.707-.708L7.293 8.5 5.854 7.061a.5.5 0 0 1 0-.708z"/>
+  </symbol>
+  <symbol id="login" viewBox="0 0 16 16">
+    <path d="M2 2a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2zm1 0v12h7V2H3z"/>
+    <path d="M11.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L12.207 8H6.5a.5.5 0 0 1 0 1h5.707l-1.647 1.646a.5.5 0 0 1-.708-.708l2-2z"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="text-bg-dark border-bottom">
+    <div class="container">
+        <div class="navbar-brand">
+            <h1 class="text mb-0">Лучший год</h1>
+        </div>
+        <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+          <li>
+            <a href="#" class="nav-link text-secondary">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
+              На главную
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-secondary">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#book"/></svg>
+              Дневник
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-secondary">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
+              Планы
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-secondary">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#habit"/></svg>
+              Привычки
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-secondary">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#login"/></svg>
+              Войти
+            </a>
+          </li>
+        </ul>
+     </div>
+  </div>
+</header>
+
+
+{% block content %}
+{% endblock %}
+
+<footer class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12 text-center text-md-start">
+          <p class="mb-2">&copy; 2017–2024 <strong>Company, Inc.</strong> &middot;
+            <a href="#" class="text-decoration-none text-muted">Privacy</a> &middot;
+            <a href="#" class="text-decoration-none text-muted">Terms</a>
+          </p>
+         </div>
+        <div class="col-12 text-center text-md-end">
+            <p><a href="#top" class="text-decoration-none text-muted back-to-top">Back to top</a></p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}" crossorigin="anonymous"></script>
+
