@@ -26,7 +26,6 @@ class Diary(models.Model):
 class Plans(models.Model):
     plan = models.CharField(max_length=250, verbose_name="План")
     date = models.DateField(verbose_name="Дата")
-    time = models.TimeField(verbose_name="Время выполнения", **NULLABLE)
     done = models.BooleanField(default=False, verbose_name="Выполнение")
 
     def __str__(self):
@@ -75,7 +74,8 @@ class Wishes(models.Model):
 class Habits(models.Model):
     year = models.ForeignKey('YearList', on_delete=models.CASCADE, verbose_name="Год")
     title = models.CharField(max_length=200, verbose_name="Привычка")
-    is_new = models.BooleanField(default=True, verbose_name="Новая привычка")
+    description = models.TextField(verbose_name="Описание", **NULLABLE)
+    done = models.BooleanField(default=True, verbose_name="Выполнено")
 
     def __str__(self):
         return f"{self.title} ({self.year.year})"

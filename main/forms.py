@@ -12,7 +12,7 @@ class DiaryForm(forms.ModelForm):
 class PlansForm(forms.ModelForm):
     class Meta:
         model = Plans
-        fields = ["plan", "date", "time", "done"]
+        fields = ["plan", "date", "done"]
 
 
 class GoalsYearForm(forms.ModelForm):
@@ -37,7 +37,7 @@ class WishesForm(forms.ModelForm):
 class HabitsForm(forms.ModelForm):
     class Meta:
         model = Habits
-        fields = ["year", "title", "is_new"]
+        fields = ["year", "title", "description", "done"]
 
 
 class ThanksForm(forms.ModelForm):
