@@ -1,0 +1,84 @@
+.form-control-dark:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle:not(:focus) {
+  outline: 0;
+}
+
+  .form-control-dark {
+    border-color: var(--bs-gray);
+  }
+
+  svg {
+    display: none;
+  }
+
+  .navbar-brand h1 {
+    font-size: 4rem; /* Увеличиваем размер шрифта */
+    position: relative;
+    top: 55px; /* Сдвигаем заголовок вниз */
+  }
+
+header {
+    background-color: #f4f1e1; /* Светлый серый фон, как у футера */
+    border-bottom: 1px solid #e7e7e7; /* Легкая разделительная линия, как у футера */
+}
+
+footer {
+    background-color: #f4f1e1; /* Светлый фон */
+    border-top: 1px solid #e7e7e7; /* Лёгкая разделительная линия */
+    width: 100%; /* Чтобы футер заполнял всю ширину экрана */
+    margin: 0; /* Убираем возможные отступы */
+}
+
+
+.back-to-top {
+    font-size: 1.1rem; /* Чуть увеличим шрифт */
+    font-weight: bold; /* Делаем текст жирным */
+    text-transform: uppercase; /* Делаем текст заглавными буквами */
+    color: #007bff; /* Синий цвет для текста */
+    transition: color 0.3s, transform 0.3s; /* Плавный переход для цвета и эффекта при наведении */
+    position: relative;
+    top: -25px; /* Немного поднимем текст еще выше */
+    left: -250px; /* Немного сдвигаем текст влево */
+    display: inline-block;
+}
+
+.back-to-top:hover {
+    color: #0056b3; /* Цвет при наведении */
+    transform: translateY(-3px); /* Легкое поднимание текста при наведении */
+}
+
+/* Стили для названия сайта */
+.navbar-brand h1 {
+  font-family: 'Playfair Display', serif; /* Шрифт Playfair Display */
+  font-size: 6rem; /* Увеличиваем размер для ещё большего акцента */
+  font-weight: 800; /* Еще более жирный стиль */
+  background: linear-gradient(45deg, #808080, #a9a9a9); /* Темно-серый градиент */
+  -webkit-background-clip: text; /* Клиппинг фона по тексту */
+  color: transparent; /* Прозрачный цвет с градиентом */
+  position: relative;
+  top: 65px; /* Сдвигаем заголовок вниз */
+  left: -500px; /* Сдвигаем заголовок влево */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 0 0 6px rgba(150, 150, 150, 0.3); /* Мягкая и менее интенсивная тень */
+  letter-spacing: 15px; /* Увеличиваем расстояние между буквами */
+  transform: scaleX(1.1); /* Растягиваем текст по горизонтали */
+  transition: all 0.3s ease; /* Плавное изменение */
+}
+
+/* Эффект при наведении */
+.navbar-brand h1:hover {
+  transform: scale(1.1) scaleX(1.1); /* Увеличение текста при наведении и растяжение по горизонтали */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 8px rgba(150, 150, 150, 0.4); /* Усиленная, но мягкая тень */
+}
+
+/* Дополнительные стили для плавных переходов */
+.navbar-brand h1 {
+  text-align: center;
+}
