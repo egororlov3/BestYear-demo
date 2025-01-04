@@ -3,64 +3,57 @@
 {% load static %}
 
 {% block content %}
-<head><script src="{% static 'js/color-modes.js' %}"></script>
+<head>
+    <script src="{% static 'js/color-modes.js' %}"></script>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+<style>
+  /* Фон всей страницы */
+  body {
+    background-color: #f4f1e1; /* Основной древесный цвет */
+    background-image:
+      url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* Текстура коры */
+    background-repeat: repeat; /* Повторение текстуры */
+    color: #333; /* Цвет текста */
+    font-family: Arial, sans-serif;
+  }
+
+  /* Основной контейнер */
+    .main-bg {
+        background-color: #f4f1e1; /* Нежный контрастный фон */
+        background-image:
+          radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px), /* Тёмные вкрапления */
+          radial-gradient(circle, rgba(0, 0, 0, 0.05) 2px, transparent 2px); /* Более светлые вкрапления */
+        background-size: 30px 30px, 60px 60px; /* Размер и распределение текстуры */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+        padding: 20px;
+        border-radius: 12px;
       }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+  /* Декоративные элементы */
+  .blog-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
 
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
+  .blog-subtitle {
+    font-size: 1.25rem;
+    color: #666;
+  }
 
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+  .container {}
+</style>
 
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-
-    </style>
-
-  </head>
-  <body>
-<main class="container">
-  <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+</head>
+<body>
+<main class="container main-bg">
+  <div class="p-4 p-md-5 mb-4 rounded bg-pattern">
     <div class="col-lg-6 px-0">
-      <h1 class="display-4 fst-italic">333</h1>
-      <p class="lead my-3"></p>
-      <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">11</a></p>
+      <h1 class="blog-title">Добро пожаловать на сайт</h1>
+      <p class="blog-subtitle">Ваш путь к лучшему году начинается здесь!</p>
+      <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Подробнее...</a></p>
     </div>
   </div>
 
@@ -68,32 +61,22 @@
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-          <h3 class="mb-0">Featured post</h3>
-          <div class="mb-1 text-body-secondary">Nov 12</div>
-          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <strong class="d-inline-block mb-2 text-primary-emphasis">Планы</strong>
+          <p class="card-text mb-auto">Здесь вы можете записывать свои планы на день, отслеживать их и отмечать выполение.</p>
           <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
             Continue reading
           </a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
         </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-          <h3 class="mb-0">Post title</h3>
-          <div class="mb-1 text-body-secondary">Nov 11</div>
-          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <strong class="d-inline-block mb-2 text-success-emphasis">Дневник</strong>
+          <p class="mb-auto">Здесь вы можете записывать ситуации которые произошли с вами чтобы отслеживать свои чувства, мысли и реакции.</p>
           <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
             Continue reading
           </a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
         </div>
       </div>
     </div>
@@ -102,47 +85,44 @@
   <div class="row g-5">
     <div class="col-md-8">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        From the Firehose
+        Прогресс привычек
       </h3>
 
-
-
       <nav class="blog-pagination" aria-label="Pagination">
-        <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
-        <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
+        <a id="new-habits" class="btn btn-outline-primary rounded-pill" href="#">Новые привычки</a>
+        <a id="old-habits" class="btn btn-outline-secondary rounded-pill" href="#">Старые привычки</a>
+        <a id="habit-list" class="btn btn-outline-secondary rounded-pill" href="#">Список привычек</a>
       </nav>
 
     </div>
 
     <div class="col-md-4">
-      <div class="position-sticky" style="top: 2rem;">
-        <div class="p-4 mb-3 bg-body-tertiary rounded">
-          <h4 class="fst-italic">About</h4>
-          <p class="mb-0"></p>
-        </div>
-
+      <div class="position-sticky">
         <div>
-          <h4 class="fst-italic">Recent posts</h4>
+          <h4 class="fst-italic">Благодарности</h4>
           <ul class="list-unstyled">
             <li>
               <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-                <div class="col-lg-8">
-                  <h6 class="mb-0">Example blog post title</h6>
-                  <small class="text-body-secondary">January 15, 2024</small>
-                </div>
               </a>
             </li>
           </ul>
         </div>
 
         <div class="p-4">
-          <h4 class="fst-italic">Archives</h4>
+          <h4 class="fst-italic">Желания</h4>
           <ol class="list-unstyled mb-0">
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+              </a>
+            </li>
           </ol>
         </div>
- </main>
-<body>
+      </div>
+    </div>
+  </div>
+</main>
 
 <script src="{% static 'js/bootstrap.bundle.min.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'js/habit_buttons.js' %}"></script>
+
 {% endblock %}

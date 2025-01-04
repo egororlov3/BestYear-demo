@@ -25,17 +25,18 @@
     top: 55px; /* Сдвигаем заголовок вниз */
   }
 
-header {
-    background-color: #f4f1e1; /* Светлый серый фон, как у футера */
-    border-bottom: 1px solid #e7e7e7; /* Легкая разделительная линия, как у футера */
-}
-
-footer {
+  /* Футер */
+  footer {
     background-color: #f4f1e1; /* Светлый фон */
+    background-image:
+      url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* Текстура коры */
+    background-repeat: repeat; /* Повторение текстуры */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Лёгкая тень */
     border-top: 1px solid #e7e7e7; /* Лёгкая разделительная линия */
     width: 100%; /* Чтобы футер заполнял всю ширину экрана */
     margin: 0; /* Убираем возможные отступы */
-}
+    padding: 20px; /* Отступы */
+  }
 
 
 .back-to-top {
@@ -54,6 +55,16 @@ footer {
     color: #0056b3; /* Цвет при наведении */
     transform: translateY(-3px); /* Легкое поднимание текста при наведении */
 }
+
+ /* Хедер */
+  header {
+    background-color: #f4f1e1; /* Светлый серый фон, как у футера */
+    background-image:
+      url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* Текстура коры */
+    background-repeat: repeat; /* Повторение текстуры */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+    border-bottom: 1px solid #e7e7e7; /* Легкая разделительная линия, как у футера */
+  }
 
 /* Стили для названия сайта */
 .navbar-brand h1 {
