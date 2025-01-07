@@ -1,95 +1,69 @@
-.form-control-dark:focus {
-  border-color: #fff;
-  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+/* Стиль для SVG иконок */
+svg {
+  display: inline-block;
+  fill: none; /* Убираем заливку */
+  stroke: #BBB2CC; /* Цвет линий иконки */
+  stroke-width: 2; /* Увеличиваем толщину линий */
+  width: 24px; /* Размер иконки */
+  height: 24px; /* Размер иконки */
+  transition: transform 0.4s cubic-bezier(0.25, 0.5, 0.5, 1); /* Очень плавное увеличение */
 }
 
-.text-small {
-  font-size: 85%;
+/* Эффект при наведении на ссылку с иконкой */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Добавляем немного пространства между иконкой и текстом */
+  transition: transform 0.4s cubic-bezier(0.25, 0.5, 0.5, 1); /* Плавное увеличение всей ссылки */
 }
 
-.dropdown-toggle:not(:focus) {
-  outline: 0;
+/* При наведении увеличиваем всю ссылку (иконку и текст) */
+.nav-link:hover {
+  transform: scale(1.15); /* Увеличение */
 }
 
-  .form-control-dark {
-    border-color: var(--bs-gray);
-  }
-
-  svg {
-    display: none;
-  }
-
-  .navbar-brand h1 {
-    font-size: 4rem; /* Увеличиваем размер шрифта */
-    position: relative;
-    top: 55px; /* Сдвигаем заголовок вниз */
-  }
-
-  /* Футер */
-  footer {
-    background-color: #f4f1e1; /* Светлый фон */
-    background-image:
-      url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* Текстура коры */
-    background-repeat: repeat; /* Повторение текстуры */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Лёгкая тень */
-    border-top: 1px solid #e7e7e7; /* Лёгкая разделительная линия */
-    width: 100%; /* Чтобы футер заполнял всю ширину экрана */
-    margin: 0; /* Убираем возможные отступы */
-    padding: 20px; /* Отступы */
-  }
-
-
-.back-to-top {
-    font-size: 1.1rem; /* Чуть увеличим шрифт */
-    font-weight: bold; /* Делаем текст жирным */
-    text-transform: uppercase; /* Делаем текст заглавными буквами */
-    color: #007bff; /* Синий цвет для текста */
-    transition: color 0.3s, transform 0.3s; /* Плавный переход для цвета и эффекта при наведении */
-    position: relative;
-    top: -25px; /* Немного поднимем текст еще выше */
-    left: -250px; /* Немного сдвигаем текст влево */
-    display: inline-block;
+/* Стиль для текста на ссылках */
+.nav-link span {
+  color: #666 ; /* Цвет текста */
+  font-size: 16px; /* Размер текста */
+  transition: transform 0.4s cubic-bezier(0.25, 0.5, 0.5, 1); /* Плавное увеличение текста */
 }
 
-.back-to-top:hover {
-    color: #0056b3; /* Цвет при наведении */
-    transform: translateY(-3px); /* Легкое поднимание текста при наведении */
-}
-
- /* Хедер */
-  header {
-    background-color: #f4f1e1; /* Светлый серый фон, как у футера */
-    background-image:
-      url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* Текстура коры */
-    background-repeat: repeat; /* Повторение текстуры */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
-    border-bottom: 1px solid #e7e7e7; /* Легкая разделительная линия, как у футера */
-  }
-
-/* Стили для названия сайта */
+/* Для заголовка (названия сайта) */
 .navbar-brand h1 {
-  font-family: 'Playfair Display', serif; /* Шрифт Playfair Display */
-  font-size: 6rem; /* Увеличиваем размер для ещё большего акцента */
-  font-weight: 800; /* Еще более жирный стиль */
-  background: linear-gradient(45deg, #808080, #a9a9a9); /* Темно-серый градиент */
-  -webkit-background-clip: text; /* Клиппинг фона по тексту */
-  color: transparent; /* Прозрачный цвет с градиентом */
-  position: relative;
-  top: 65px; /* Сдвигаем заголовок вниз */
-  left: -500px; /* Сдвигаем заголовок влево */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 0 0 6px rgba(150, 150, 150, 0.3); /* Мягкая и менее интенсивная тень */
-  letter-spacing: 15px; /* Увеличиваем расстояние между буквами */
-  transform: scaleX(1.1); /* Растягиваем текст по горизонтали */
-  transition: all 0.3s ease; /* Плавное изменение */
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem; /* Увеличиваем размер для большего акцента */
+  font-weight: 700;
+  background: linear-gradient(45deg, #BBB2CC, #BBB2CC); /* Градиент с более сбалансированным переходом */
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 1s cubic-bezier(0.25, 0.5, 0.5, 1), text-shadow 0.3s ease-in-out; /* Плавное увеличение и тень */
+  margin-right: 80px; /* Сдвигаем название еще левее */
+  margin-bottom: 20px; /* Отступ снизу, чтобы опустить название */
 }
 
-/* Эффект при наведении */
 .navbar-brand h1:hover {
-  transform: scale(1.1) scaleX(1.1); /* Увеличение текста при наведении и растяжение по горизонтали */
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 8px rgba(150, 150, 150, 0.4); /* Усиленная, но мягкая тень */
+  transform: scale(1.1); /* Увеличение текста */
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Более выраженная тень при наведении */
 }
 
-/* Дополнительные стили для плавных переходов */
-.navbar-brand h1 {
-  text-align: center;
+/* Для выравнивания иконок */
+.nav {
+  display: flex;
+  gap: 20px; /* Расстояние между элементами */
+  align-items: center;
+  margin-left: 20px; /* Сдвигаем иконки вправо */
+  margin-bottom: 10px; /* Немного опускаем иконки */
+}
+
+/* Футер */
+footer {
+  background: linear-gradient(135deg, rgba(156, 203, 201, 0.6), rgba(156, 203, 201, 0.2)); /* Более прозрачный градиент */
+}
+
+/* Хедер */
+header {
+  background: linear-gradient(135deg, rgba(156, 203, 201, 0.6), rgba(156, 203, 201, 0.2)); /* Более прозрачный градиент */
 }

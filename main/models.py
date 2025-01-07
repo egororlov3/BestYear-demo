@@ -25,6 +25,7 @@ class Diary(models.Model):
 # ПЛАНЫ
 class Plans(models.Model):
     plan = models.CharField(max_length=250, verbose_name="План")
+    description = models.CharField(max_length=500, verbose_name="Описание", **NULLABLE)
     date = models.DateField(verbose_name="Дата")
     done = models.BooleanField(default=False, verbose_name="Выполнение")
 

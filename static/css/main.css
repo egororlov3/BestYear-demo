@@ -1,0 +1,154 @@
+/* Основной фон страницы */
+body {
+  background-color: #F2D9B8; /* Основной цвет */
+  background-image: url('https://www.transparenttextures.com/patterns/gplay.png');
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Растягиваем на всю высоту */
+}
+
+/* Основной контент */
+.main-bg {
+  position: relative; /* Для псевдоэлемента */
+  background-color: #F2D9B8; /* Основной цвет */
+  color: #333;
+  min-height: 100vh;
+  padding: 20px;
+  overflow: hidden; /* Чтобы текстура не выходила за пределы */
+}
+
+/* Текстура по бокам */
+.main-bg::before {
+  content: ''; /* Создаем псевдоэлемент */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://www.transparenttextures.com/patterns/gplay.png') repeat;
+  background-size: 300px 300px; /* Размер текстуры */
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%, /* Чуть более прозрачная текстура слева */
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0) 70%,
+    rgba(0, 0, 0, 0.8) 100% /* Чуть более прозрачная текстура справа */
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%, /* Чуть более прозрачная текстура слева */
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0) 70%,
+    rgba(0, 0, 0, 0.8) 100% /* Чуть более прозрачная текстура справа */
+  );
+  z-index: 1; /* Текстура под контентом */
+  pointer-events: none; /* Не мешает кликам */
+}
+
+
+/* Контент поверх псевдоэлемента */
+.main-bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Контейнер */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+/* Заголовок */
+.blog-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Вторичный текст */
+.blog-subtitle {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+/* Рекомендации и пожелания */
+.position-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+}
+
+.fst-italic {
+  font-style: italic;
+}
+
+/* Пагинация */
+.blog-pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+/* Кнопки и пагинация */
+.blog-pagination a {
+  background-color: #BBB2CC;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.blog-pagination a:hover {
+  background-color: #9CCBC9;
+}
+
+/* Контейнер для раздела прогресса привычек */
+.blog-pagination {
+  margin-left: 20px; /* Отступ слева для кнопок */
+}
+
+/* Прогресс привычек - заголовок */
+h3.pb-4.mb-4.fst-italic {
+  margin-left: 20px; /* Отступ слева для заголовка */
+}
+
+/* Кнопки для пагинации */
+.blog-pagination a {
+  margin-left: 10px; /* Отступ между кнопками */
+}
+
+/* Сделаем кнопки немного больше и с добавленным отступом */
+.blog-pagination .btn {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+  /* Текст на страницах */
+.text {
+  color: #333; /* Основной текст */
+}
+
+/* Для вторичного текста */
+.blog-subtitle {
+  color: #666;
+}
+
+/* Для ссылок */
+a {
+  color: #BBB2CC;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #9CCBC9;
+}
+
+.blog-title, .blog-subtitle, .lead {
+  white-space: nowrap; /* Запрещает перенос текста */
+}
