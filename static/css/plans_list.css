@@ -1,0 +1,132 @@
+  html, body {
+    height: 100%;
+    margin: 0; /* Убираем отступы по умолчанию */
+    overflow: auto; /* Включаем вертикальную прокрутку для всей страницы */
+  }
+
+  /* Основной фон страницы */
+  body {
+    background-color: #F2D9B8; /* Основной цвет */
+    background-image: url('https://www.transparenttextures.com/patterns/gplay.png');
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Растягиваем на всю высоту */
+
+  }
+
+/* Контейнер */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+  /* Для страницы plans_list */
+  .plans-page {
+    position: relative; /* Для псевдоэлемента */
+    background-color: #F2D9B8; /* Основной цвет */
+  }
+
+  /* Текстура по бокам */
+  .plans-page::before {
+    content: ''; /* Создаем псевдоэлемент */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://www.transparenttextures.com/patterns/gplay.png') repeat;
+    background-size: 300px 300px; /* Размер текстуры */
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8) 0%, /* Чуть более прозрачная текстура слева */
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0) 70%,
+      rgba(0, 0, 0, 0.8) 100% /* Чуть более прозрачная текстура справа */
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8) 0%, /* Чуть более прозрачная текстура слева */
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0) 70%,
+      rgba(0, 0, 0, 0.8) 100% /* Чуть более прозрачная текстура справа */
+    );
+    z-index: 1; /* Текстура под контентом */
+    pointer-events: none; /* Не мешает кликам */
+  }
+
+  /* Контент поверх псевдоэлемента */
+  .plans-page > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Карточки и кнопки */
+  .card {
+    background-color: #9CCBC9; /* Прозрачный нейтральный оттенок фона */
+    border-radius: 20px; /* Округлые углы */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Мягкая тень */
+    background-image:
+      url("/static/img/ep_naturalwhite.png"), /* Локальная текстура */
+      linear-gradient(to top, rgba(244, 241, 225, 0.1), rgba(244, 241, 225, 0.2)); /* Мягкий полупрозрачный цвет */
+    background-repeat: repeat; /* Повторение текстуры */
+    background-blend-mode: multiply; /* Сохранение умножения для текстуры */
+    background-size: 150px 150px; /* Размер текстуры */
+    transition: transform 0.2s ease-in-out; /* Плавное изменение */
+    position: relative; /* Для слоев */
+    display: flex;
+    flex-direction: column; /* Располагаем элементы вертикально */
+    height: 100%;  /* Подстраивает высоту под весь контейнер */
+    min-height: 250px
+  }
+
+  /* Наведение на карточку */
+  .card:hover {
+    transform: translateY(-5px); /* Легкий подъем при наведении */
+  }
+
+  /* Заголовок карточки */
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 15px; /* Добавлен отступ, чтобы текст не прилипал к краям */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Легкая тень для контраста */
+  }
+
+  /* Текст в карточке */
+  .card-text {
+    font-size: 1rem;
+    padding: 0 15px 15px; /* Отступ снизу и по бокам */
+  }
+
+  /* Кнопки */
+  .btn-outline-primary {
+    color: black;
+    border-radius: 50px; /* Округлые кнопки */
+    font-weight: 600;
+    border: 2px solid black; /* Цвет границы */
+    background-color: transparent; /* Прозрачный фон */
+    transition: all 0.3s ease; /* Плавное изменение при наведении */
+    margin-top: auto; /* Это заставит кнопку идти внизу карточки */
+    align-self: flex-start; /* Выровнять кнопку по левому краю */
+    margin-bottom: 10px; /* Немного отступа снизу */
+  }
+
+  /* При наведении на кнопку */
+  .btn-outline-primary:hover {
+    color: black; /* Текст становится черным */
+    background-color: #BBB2CC; /* Фон кнопки становится тем же цветом */
+    border: 2px solid black; /* Граница остается тем же цветом */
+  }
+
+  /* Контент внутри карточки */
+  .card-body {
+    display: flex;
+    flex-direction: column; /* Все элементы карточки в колонку */
+    justify-content: space-between; /* Пространство между элементами */
+    flex-grow: 1; /* Чтобы карточка заполняла все доступное пространство */
+    margin-top: auto;
+  }

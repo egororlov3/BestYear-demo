@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 from django.core.exceptions import ValidationError
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -66,6 +68,25 @@ class PlansListView(ListView):
     template_name = "plans_list.html"
     context_object_name = "plans"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # Сортируем планы по дате (возрастающая дата)
+        plans = context['plans'].order_by('date')  # Сортировка по возрастанию даты
+
+        # Группируем планы по дате
+        grouped_plans = defaultdict(list)
+        for plan in plans:
+            grouped_plans[plan.date].append(plan)
+
+        # Ограничиваем количество планов до 3 для каждой даты
+        for date in grouped_plans:
+            grouped_plans[date] = grouped_plans[date][:3]
+
+        # Передаем сгруппированные планы в контекст
+        context['grouped_plans'] = dict(grouped_plans)
+
+        return context
 
 class PlansDetailView(DetailView):
     model = Plans
