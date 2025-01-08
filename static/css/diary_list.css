@@ -1,6 +1,7 @@
-  html, body {
+html, body {
     height: 100%;
-    margin: 0; /* Убираем отступы по умолчанию */
+    margin: 0;
+    padding: 0;
     overflow: auto; /* Включаем вертикальную прокрутку для всей страницы */
   }
 
@@ -11,8 +12,6 @@
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    height: 100%; /* Растягиваем на всю высоту */
-
   }
 
 /* Контейнер */
@@ -24,14 +23,16 @@
   flex-grow: 1;
 }
 
-  /* Для страницы plans_list */
-  .plans-page {
+
+  /* Для страницы diary_list */
+  .diary-page {
     position: relative; /* Для псевдоэлемента */
     background-color: #F2D9B8; /* Основной цвет */
+    flex-shrink: 0;
   }
 
   /* Текстура по бокам */
-  .plans-page::before {
+  .diary-page::before {
     content: ''; /* Создаем псевдоэлемент */
     position: absolute;
     top: 0;
@@ -59,10 +60,11 @@
   }
 
   /* Контент поверх псевдоэлемента */
-  .plans-page > * {
+  .diary-page > * {
     position: relative;
     z-index: 2;
   }
+
 
   /* Карточки и кнопки */
   .card {
@@ -130,3 +132,5 @@
     flex-grow: 1; /* Чтобы карточка заполняла все доступное пространство */
     margin-top: auto;
   }
+
+

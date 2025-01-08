@@ -6,7 +6,7 @@ from django.utils.timezone import now
 from users.models import NULLABLE
 
 
-# ДНЕВНИЕ
+# ДНЕВНИК
 class Diary(models.Model):
     situation = models.CharField(max_length=500, verbose_name="Ситуация")
     feelings = models.TextField(verbose_name="Чувства")

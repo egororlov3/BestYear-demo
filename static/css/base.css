@@ -61,6 +61,9 @@ svg {
 /* Футер */
 footer {
   background: linear-gradient(135deg, rgba(156, 203, 201, 0.6), rgba(156, 203, 201, 0.2)); /* Более прозрачный градиент */
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: auto; /* Прижимает футер к низу страницы */
 }
 
 /* Хедер */
